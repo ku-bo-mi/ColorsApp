@@ -13,6 +13,7 @@ struct MyColor: Identifiable {
     var name_jp: String
     var name_kana: String
     var name_eng: String
+    var systematicColorName: String
     var color: Color
     var detail: String
 }
