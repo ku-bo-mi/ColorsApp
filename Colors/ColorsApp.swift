@@ -9,9 +9,31 @@ import SwiftUI
 
 @main
 struct ColorsApp: App {
+    // Properties
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @AppStorage("isShowingList") var isShowingList : Bool = false    
+    
+    // Body
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isShowingList {
+                ContentView()
+            } else {
+                RandomColorView()
+            }
+            
         }
+        
+    }
+}
+
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        // 起動時に1回だけやる処理をここに記述する
+        print("app started.")
+        
+        return true
     }
 }
