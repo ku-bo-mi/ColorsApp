@@ -22,7 +22,7 @@ struct ColorsApp: App {
             if isShowingList {
                 ContentView(colors: colorsData)
             } else {
-                ColorCardAnimationView(colors: colorsData)
+                RandomColorFullscreenView(colors: colorsData)
             }
             
         }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ColorCardAnimationView: View {
+struct RandomColorFullscreenView: View {
     // Properties
     @AppStorage("isShowingList") var isShowingList : Bool = false
     let colors: [MyColor]
@@ -54,6 +54,8 @@ struct ColorCardAnimationView: View {
                         
                     }) {
                         Image(systemName: "list.bullet")
+                            .fontWeight(.bold)
+                            .foregroundColor(color.textColor)
                     }
                 }
             }
@@ -68,6 +70,6 @@ struct ColorCardAnimationView: View {
 
 struct ColorCardAnimationView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorCardAnimationView(colors: getSampleColors())
+        RandomColorFullscreenView(colors: getSampleColors())
     }
 }

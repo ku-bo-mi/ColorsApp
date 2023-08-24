@@ -18,7 +18,7 @@ struct RandomColorView: View {
                 ForEach(colors.shuffled()) { color in
 //                    ColorCardView(color: color)
 //                        .padding(.horizontal, 20)
-                    ColorCardAnimationView(colors: colors)
+                    RandomColorFullscreenView(colors: colors)
                 }
             }
             .tabViewStyle(PageTabViewStyle())

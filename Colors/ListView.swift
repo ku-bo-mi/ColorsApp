@@ -30,7 +30,7 @@ struct ContentView: View {
                 }
                 
             }
-            .navigationTitle("Colors")
+            .navigationTitle("色図鑑")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button (action: {
