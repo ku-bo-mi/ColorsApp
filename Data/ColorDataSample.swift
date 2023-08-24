@@ -28,6 +28,14 @@ func getSampleColors() -> [MyColor] {
             name_jp: "薔薇色",
             name_kana: "ばらいろ",
             red: 233, green: 78, blue: 102),
+        MyColor(
+            name_jp: "桃色",
+            name_kana: "ももいろ",
+            red: 240, green: 145, blue: 153),
+        MyColor(
+            name_jp: "藤紫",
+            name_kana: "ふじむらさき",
+            red: 165, green: 154, blue: 202),
     ]
 }
 

@@ -1,23 +1,27 @@
 //
-//  ContentView.swift
+//  FavoritesView.swift
 //  Colors
 //
-//  Created by 久保田麻美 on 2023/08/23.
+//  Created by 久保田麻美 on 2023/08/24.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct FavoritesView: View {
     // Properties
-    @AppStorage("isShowingList") var isShowingList : Bool = true
     var colors: [MyColor]
+    var favs: [MyColor] {
+        colors.filter { color in
+            color.isFavorite
+        }
+    }
         
     // Body
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack (spacing: 0) {
-                    ForEach(colors) { item in
+                    ForEach(favs) { item in
                         NavigationLink(
                             destination: ColorDetailView(color: item)) {
                                 ColorRowView(color: item)
@@ -30,29 +34,14 @@ struct ContentView: View {
                 }
                 
             }
-            .navigationTitle("色図鑑")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button (action: {
-                        print("button tapped.")
-                        isShowingList = false
-                    }) {
-                        Image(systemName: "square")
-                    }
-                }
-            }
+            .navigationTitle("お気に入り")
         }
-        .onAppear {
-                }
+        
     }
-    
-    
-    
-    
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct FavoritesView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(colors: getSampleColors())
+        FavoritesView(colors: getSampleColors())
     }
 }

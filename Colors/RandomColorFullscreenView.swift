@@ -11,40 +11,13 @@ struct RandomColorFullscreenView: View {
     // Properties
     @AppStorage("isShowingList") var isShowingList : Bool = false
     let colors: [MyColor]
-    @State var colorIndex: Int = 0
-    var color: MyColor {
-        colors[colorIndex]
-    }
     
-    // Initializer
-    init(colors: [MyColor]) {
-        self.colors = colors.shuffled()
-    }
     
     // Body
     var body: some View {
         
         NavigationView {
-            ZStack {
-                color.color
-                    .animation(.easeInOut.speed(0.3), value: colorIndex)
-                VStack (spacing: 8) {
-                    Text(color.name_jp)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    Text(color.name_kana)
-                        .fontWeight(.bold)
-                }
-                .foregroundColor(color.textColor)
-            }
-            .ignoresSafeArea()
-            .onTapGesture {
-                if colorIndex < colors.count - 1 {
-                    colorIndex += 1
-                } else {
-                    colorIndex = 0
-                }
-            }
+            FullscreenTapView(colors: colors)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button (action: {
@@ -55,7 +28,7 @@ struct RandomColorFullscreenView: View {
                     }) {
                         Image(systemName: "list.bullet")
                             .fontWeight(.bold)
-                            .foregroundColor(color.textColor)
+//                            .foregroundColor(color.textColor)
                     }
                 }
             }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ColorRowView: View {
     //Properties
-    var color: MyColor
+    @State var color: MyColor
     
     var body: some View {
         HStack {
@@ -20,11 +20,24 @@ struct ColorRowView: View {
                     .font(.caption)
                     .fontWeight(.bold)
             }
-            .foregroundColor(color.textColor)
             
             Spacer()
+            if color.isFavorite {
+                Button(action: {
+                    color.isFavorite = false
+                }) {
+                    Image(systemName: "heart.fill")
+                }
+            } else {
+                Button(action: {
+                    color.isFavorite = true
+                }) {
+                    Image(systemName: "heart")
+                }
+            }
             
         }
+        .foregroundColor(color.textColor)
         .frame(minWidth: 100, maxWidth: .infinity)
         .padding(.horizontal, 20)
         .padding(.vertical, 20)

@@ -16,6 +16,7 @@ struct MyColor: Identifiable {
     var red: Int
     var green: Int
     var blue: Int
+    var isFavorite: Bool = false
     
     var hexCode: String {
         "#" + String(format: "%02X", red) + String(format: "%02X", green) + String(format: "%02X", blue)
