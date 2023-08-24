@@ -10,6 +10,7 @@ import SwiftUI
 struct ColorDetailView: View {
     // Properties
     var color: MyColor
+    @Environment(\.dismiss) var dismiss
     
     // Body
     var body: some View {
@@ -39,11 +40,43 @@ struct ColorDetailView: View {
                             .foregroundColor(color.subTextColor)
                         Text(color.hexCode)
                     }
+                    
+                    
                 }
                 .foregroundColor(color.textColor)
                 .padding(.horizontal, 40)
                 
-            
+                VStack {
+                    HStack (spacing: 20) {
+                        Spacer()
+                        
+                        Button(action: {
+                            // TODO
+                        }) {
+                            Image(systemName: "square.on.square")
+                                
+                        }
+                        
+                        Button(action: {
+                            // TODO
+                        }) {
+                            Image(systemName: "heart")
+                                
+                        }
+                        
+                        Button(action: {
+                            dismiss()
+                        }) {
+                            Image(systemName: "delete.backward")
+                                
+                        }
+                    }
+                    .foregroundColor(color.textColor)
+                    .font(.title2)
+                    Spacer()
+                }
+                .padding(.vertical, 72)
+                .padding(.horizontal, 40)
                 
 
             }

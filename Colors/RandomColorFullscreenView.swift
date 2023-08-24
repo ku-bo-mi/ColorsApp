@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RandomColorFullscreenView: View {
     // Properties
-    @AppStorage("isShowingList") var isShowingList : Bool = false
     let colors: [MyColor]
     
     
@@ -22,7 +21,7 @@ struct RandomColorFullscreenView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button (action: {
                         print("button tapped.")
-                        isShowingList = true
+//                        isShowingList = true
 //                            print(strings[0])
                         
                     }) {
