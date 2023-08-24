@@ -8,10 +8,31 @@
 import Foundation
 import SwiftUI
 
-let colorsData: [MyColor] = readCSV("ColorData.csv")
+//let colorsData: [MyColor] = readCSV("ColorData.csv")
+
+func getSampleColor() -> MyColor {
+    return getSampleColors().shuffled()[0]
+}
+
+func getSampleColors() -> [MyColor] {
+    return [
+        MyColor(
+            name_jp: "露草色",
+            name_kana: "つゆくさいろ",
+            red: 35, green: 157, blue: 218),
+        MyColor(
+            name_jp: "向日葵色",
+            name_kana: "ひまわりいろ",
+            red: 252, green: 200, blue: 0),
+        MyColor(
+            name_jp: "薔薇色",
+            name_kana: "ばらいろ",
+            red: 233, green: 78, blue: 102),
+    ]
+}
 
 
-//let colorsData: [MyColor] = [
+//let colorsDataSample: [MyColor] = [
 //    MyColor(
 //        name_jp: "桜色",
 //        name_kana: "さくらいろ",

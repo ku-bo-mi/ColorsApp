@@ -13,13 +13,14 @@ struct ColorCardView: View {
     
     var body: some View {
         ZStack {
-            VStack {
+            VStack (spacing: 8) {
                 Text(color.name_jp)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 Text(color.name_kana)
+                    .fontWeight(.bold)
             }
-            .foregroundColor(.white)
+            .foregroundColor(color.textColor)
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         .background(color.color)
@@ -29,6 +30,6 @@ struct ColorCardView: View {
 
 struct ColorCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorCardView(color: colorsData[1])
+        ColorCardView(color: getSampleColor())
     }
 }

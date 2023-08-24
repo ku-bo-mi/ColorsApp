@@ -48,14 +48,19 @@ func parseColorData(from lines: [String]) -> [MyColor] {
         }
         let name_jp = data[1]
         let name_kana = data[2]
-        let hexCode = data[3]
-        let red = Double(data[4])
-        let green = Double(data[5])
-        let blue = Double(data[6])
-        if (red == nil || green == nil || blue == nil) {
+        guard let red = Int(data[4]) else {
             continue
         }
-        results.append(MyColor(name_jp: name_jp, name_kana: name_kana, name_eng: "Test", systematicColorName: "Test", color: Color(red: red!/256, green: green!/256, blue: blue!/256), detail: "none"))
+        guard let green = Int(data[5]) else {
+            continue
+        }
+        guard let blue = Int(data[6]) else {
+            continue
+        }
+        
+        
+        
+        results.append(MyColor(name_jp: name_jp, name_kana: name_kana, red: red, green: green, blue: blue))
     
     }
     print(results.count)

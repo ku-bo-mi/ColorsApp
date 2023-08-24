@@ -13,14 +13,16 @@ struct ColorsApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @AppStorage("isShowingList") var isShowingList : Bool = false    
+    let colorsData: [MyColor] = readCSV("ColorData.csv")
+
     
     // Body
     var body: some Scene {
         WindowGroup {
             if isShowingList {
-                ContentView()
+                ContentView(colors: colorsData)
             } else {
-                RandomColorView()
+                ColorCardAnimationView(colors: colorsData)
             }
             
         }

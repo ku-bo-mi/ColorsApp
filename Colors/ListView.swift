@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     // Properties
     @AppStorage("isShowingList") var isShowingList : Bool = true
-    var colors: [MyColor] = colorsData
+    var colors: [MyColor]
         
     // Body
     var body: some View {
@@ -26,13 +26,10 @@ struct ContentView: View {
                             .listRowSeparator(.hidden)
                             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                             
-                        
-                        
                     }
                 }
                 
             }
-//            .listStyle(.plain)
             .navigationTitle("Colors")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -56,6 +53,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(colors: getSampleColors())
     }
 }

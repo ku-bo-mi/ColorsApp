@@ -14,26 +14,38 @@ struct ColorDetailView: View {
     // Body
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack (alignment: .leading) {
+            ZStack (alignment: .leading) {
+                 
+                color.color.ignoresSafeArea()
+                    
+                VStack (alignment: .leading, spacing: 8)  {
+                    Text(color.name_jp)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    Text(color.name_kana)
+                        .fontWeight(.bold)
+                    
                     Rectangle()
-                        .fill(color.color)
-                        .frame(height: 500)
-                    VStack (alignment: .leading, spacing: 16)  {
-                        Text(color.name_jp)
-                            .font(.title)
-                            .fontWeight(.bold)
-                        Text("\(color.name_kana) | \(color.name_eng)")
-                            .foregroundColor(.secondary)
-                        Text("\(color.color.description)")
-                            .foregroundColor(.secondary)
-                        
-                        
+                        .frame(width: 100, height: 1)
+                        .padding(.vertical, 20)
+                    
+                    HStack {
+                        Text("RGB")
+                            .foregroundColor(color.subTextColor)
+                        Text("\(String(color.red)), \(String(color.green)), \(String(color.blue))")
                     }
-                    .padding()
-                    
-                    
+                    HStack {
+                        Text("HEX")
+                            .foregroundColor(color.subTextColor)
+                        Text(color.hexCode)
+                    }
                 }
+                .foregroundColor(color.textColor)
+                .padding(.horizontal, 40)
+                
+            
+                
+
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .navigationTitle(color.name_jp)
@@ -47,6 +59,6 @@ struct ColorDetailView: View {
 
 struct ColorDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorDetailView(color: colorsData[2])
+        ColorDetailView(color: getSampleColor())
     }
 }

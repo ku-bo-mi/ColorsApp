@@ -10,19 +10,19 @@ import SwiftUI
 struct RandomColorView: View {
     //Properties
     @AppStorage("isShowingList") var isShowingList : Bool = false
-    var colors: [MyColor] = colorsData
-//    let strings: [String] = loadCSV("ColorData.csv")
+    var colors: [MyColor]
     
     var body: some View {
         NavigationView {
             TabView {
                 ForEach(colors.shuffled()) { color in
-                    ColorCardView(color: color)
-                        .padding(.horizontal, 20)
+//                    ColorCardView(color: color)
+//                        .padding(.horizontal, 20)
+                    ColorCardAnimationView(colors: colors)
                 }
             }
             .tabViewStyle(PageTabViewStyle())
-                .toolbar {
+            .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button (action: {
                             print("button tapped.")
@@ -41,6 +41,6 @@ struct RandomColorView: View {
 
 struct RandomColorView_Previews: PreviewProvider {
     static var previews: some View {
-        RandomColorView()
+        RandomColorView(colors: getSampleColors())
     }
 }

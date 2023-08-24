@@ -18,8 +18,9 @@ struct ColorRowView: View {
                     .fontWeight(.bold)
                 Text(color.name_kana)
                     .font(.caption)
+                    .fontWeight(.bold)
             }
-            .foregroundColor(.white)
+            .foregroundColor(color.textColor)
             
             Spacer()
             
@@ -34,7 +35,7 @@ struct ColorRowView: View {
 
 struct ColorRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorRowView(color: colorsData[1])
+        ColorRowView(color: getSampleColor())
             .previewLayout(.sizeThatFits)
             .padding()
     }
