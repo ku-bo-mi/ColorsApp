@@ -18,33 +18,21 @@ struct AllColorsListView: View {
             ScrollView {
                 VStack (spacing: 0) {
                     ForEach(colors) { color in
-//                        NavigationLink(
-//                            destination: ColorDetailView(color: item)) {
-//                                ColorRowView(color: item)
-//
-//                            }
-//                            .listRowSeparator(.hidden)
-//                            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                         ColorRowView(color: color)
                             .onTapGesture {
                                 showingDetailView.toggle()
+                                print("\(color.name_jp) is tapped.")
                             }
                             .fullScreenCover(isPresented: $showingDetailView) {
                                 ColorDetailView(color: color)
                             }
-                            
                     }
                 }
-                
             }
             .navigationTitle("色図鑑")
         }
         
     }
-    
-    
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

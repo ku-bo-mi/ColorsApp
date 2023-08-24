@@ -12,18 +12,12 @@ struct ColorsApp: App {
     // Properties
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @AppStorage("isShowingList") var isShowingList : Bool = false
     let colorsData: [MyColor] = readCSV("ColorData.csv")
     var favorites: [MyColor] = []
     
     // Body
     var body: some Scene {
         WindowGroup {
-//            if isShowingList {
-//                ListView(colors: colorsData)
-//            } else {
-//                RandomColorFullscreenView(colors: colorsData)
-//            }
             TabMenuView(colors: colorsData)
         }
         
