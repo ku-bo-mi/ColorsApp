@@ -9,12 +9,12 @@ import SwiftUI
 
 struct FullscreenTapView: View {
     // Properties
-    @AppStorage("isShowingList") var isShowingList : Bool = false
     let colors: [MyColor]
     @State var colorIndex: Int = 0
     var color: MyColor {
         colors[colorIndex]
     }
+    @State var showingDetailView: Bool = false
     
     // Initializer
     init(colors: [MyColor]) {
@@ -33,6 +33,23 @@ struct FullscreenTapView: View {
                     .fontWeight(.bold)
             }
             .foregroundColor(color.textColor)
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        showingDetailView.toggle()
+                    }) {
+                        Image(systemName: "info.circle")
+                    }
+                    .foregroundColor(color.textColor)
+                    .fullScreenCover(isPresented: $showingDetailView) {
+                        ColorDetailView(color: color)
+                    }
+                }
+                Spacer()
+            }
+            .padding(60)
+            
         }
         .edgesIgnoringSafeArea(.top)
         .onTapGesture {
