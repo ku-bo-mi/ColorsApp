@@ -11,6 +11,7 @@ struct ColorDetailView: View {
     // Properties
     var color: MyColor
     @Environment(\.dismiss) var dismiss
+    @State var showingMessage: Bool = false
     
     // Body
     var body: some View {
@@ -20,15 +21,55 @@ struct ColorDetailView: View {
                 color.color.ignoresSafeArea()
                     
                 VStack (alignment: .leading, spacing: 8)  {
-                    Text(color.name_jp)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    Text(color.name_kana)
-                        .fontWeight(.bold)
+                    HStack (spacing: 20) {
+                        Spacer()
+                        
+                        // Copy button
+                        Button(action: {
+                            UIPasteboard.general.string = color.hexCode
+                            showingMessage = true
+                        }) {
+                            Image(systemName: "square.on.square")
+                        }
+                        .alert(isPresented: $showingMessage) {
+                            Alert(
+                                title: Text("Color copied!"),
+                                message: Text(color.hexCode)
+                            )
+                        }
+                        
+                        // Favorite button
+                        Button(action: {
+                            // TODO
+                        }) {
+                            Image(systemName: "heart")
+                                
+                        }
+                        
+                        // Close button
+                        Button(action: {
+                            dismiss()
+                        }) {
+                            Image(systemName: "delete.backward")
+                                
+                        }
+                    }
+                    .foregroundColor(color.textColor)
+                    .font(.title2)
                     
-                    Rectangle()
-                        .frame(width: 100, height: 1)
-                        .padding(.vertical, 20)
+                    Spacer()
+                    
+                    VStack (alignment: .center) {
+                        Text(color.name_jp)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        Text(color.name_kana)
+                            .fontWeight(.bold)
+                    }
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    
+                    
+                    Spacer()
                     
                     HStack {
                         Text("RGB")
@@ -45,38 +86,8 @@ struct ColorDetailView: View {
                 }
                 .foregroundColor(color.textColor)
                 .padding(.horizontal, 40)
+                .padding(.vertical, 40)
                 
-                VStack {
-                    HStack (spacing: 20) {
-                        Spacer()
-                        
-                        Button(action: {
-                            // TODO
-                        }) {
-                            Image(systemName: "square.on.square")
-                                
-                        }
-                        
-                        Button(action: {
-                            // TODO
-                        }) {
-                            Image(systemName: "heart")
-                                
-                        }
-                        
-                        Button(action: {
-                            dismiss()
-                        }) {
-                            Image(systemName: "delete.backward")
-                                
-                        }
-                    }
-                    .foregroundColor(color.textColor)
-                    .font(.title2)
-                    Spacer()
-                }
-                .padding(.vertical, 72)
-                .padding(.horizontal, 40)
                 
 
             }
@@ -84,7 +95,7 @@ struct ColorDetailView: View {
             .navigationTitle(color.name_jp)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarHidden(true)
-            .edgesIgnoringSafeArea(.top)
+            
         }
         
     }
