@@ -9,23 +9,31 @@ import SwiftUI
 
 struct AllColorsListView: View {
     // Properties
-    var colors: [MyColor]
     @State var showingDetailView: Bool = false
+    @ObservedObject var colorsData = ColorData()
+    @State var selectedColor: MyColor? = getSampleColor()
         
     // Body
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack (spacing: 0) {
-                    ForEach(colors) { color in
+                    ForEach(colorsData.colors) { color in
+
+//                        NavigationLink(
+//                            destination: ColorDetailView(color: color)) {
+//                                ColorRowView(color: color)
+//                            }
                         ColorRowView(color: color)
                             .onTapGesture {
+                                selectedColor = color
                                 showingDetailView.toggle()
                                 print("\(color.name_jp) is tapped.")
                             }
                             .fullScreenCover(isPresented: $showingDetailView) {
-                                ColorDetailView(color: color)
+                                ColorDetailView(color: selectedColor!)
                             }
+                            
                     }
                 }
             }
@@ -37,6 +45,6 @@ struct AllColorsListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        AllColorsListView(colors: getSampleColors())
+        AllColorsListView()
     }
 }

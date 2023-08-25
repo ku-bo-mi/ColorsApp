@@ -10,27 +10,27 @@ import SwiftUI
 struct TabMenuView: View {
     // Properties
     @State var selection = 1
-    let colors: [MyColor]
+//    let colors: [MyColor]
     
     var body: some View {
         TabView(selection: $selection) {
-            FullscreenTapView(colors: colors)
+            FullscreenTapView()
                 .tabItem {
                     Label("見つける", systemImage: "hand.tap")
                 }
                 .tag(1)
             
-            AllColorsListView(colors: colors)
+            AllColorsListView()
                 .tabItem {
                     Label("色図鑑", systemImage: "line.3.horizontal")
                 }
                 .tag(2)
             
-            FavoritesView(colors: colors)
-                .tabItem {
-                    Label("お気に入り", systemImage: "heart")
-                }
-                .tag(3)
+//            FavoritesView(colors: colors)
+//                .tabItem {
+//                    Label("お気に入り", systemImage: "heart")
+//                }
+//                .tag(3)
             
             SettingsView()
                 .tabItem {
@@ -43,6 +43,6 @@ struct TabMenuView: View {
 
 struct TabView_Previews: PreviewProvider {
     static var previews: some View {
-        TabMenuView(colors: getSampleColors())
+        TabMenuView()
     }
 }
