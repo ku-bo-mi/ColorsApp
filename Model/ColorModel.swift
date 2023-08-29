@@ -70,11 +70,14 @@ extension MyColor: Comparable {
         let uiColor2 = UIColor(rhs.color)
         var hue1: CGFloat = 0
         var hue2: CGFloat = 0
-        var saturation: CGFloat = 0
+        var saturation1: CGFloat = 0
+        var saturation2: CGFloat = 0
         var brightness: CGFloat = 0
         var alpha: CGFloat = 0
-        uiColor1.getHue(&hue1, saturation: &saturation, brightness: &brightness, alpha: &alpha)
-        uiColor2.getHue(&hue2, saturation: &saturation, brightness: &brightness, alpha: &alpha)
-        return hue1 < hue2
+        uiColor1.getHue(&hue1, saturation: &saturation1, brightness: &brightness, alpha: &alpha)
+        uiColor2.getHue(&hue2, saturation: &saturation2, brightness: &brightness, alpha: &alpha)
+        let value1 = saturation1 > 0.1 ? hue1 : 0.0
+        let value2 = saturation2 > 0.1 ? hue2 : 0.0
+        return value1 < value2
     }
 }
