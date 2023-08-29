@@ -22,19 +22,19 @@ struct ColorRowView: View {
             }
             
             Spacer()
-            if color.isFavorite {
-                Button(action: {
-                    color.isFavorite = false
-                }) {
-                    Image(systemName: "heart.fill")
-                }
-            } else {
-                Button(action: {
-                    color.isFavorite = true
-                }) {
-                    Image(systemName: "heart")
-                }
-            }
+//            if color.isFavorite {
+//                Button(action: {
+//                    color.isFavorite = false
+//                }) {
+//                    Image(systemName: "heart.fill")
+//                }
+//            } else {
+//                Button(action: {
+//                    color.isFavorite = true
+//                }) {
+//                    Image(systemName: "heart")
+//                }
+//            }
             
         }
         .foregroundColor(color.textColor)

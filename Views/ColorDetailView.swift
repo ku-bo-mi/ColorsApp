@@ -12,6 +12,7 @@ struct ColorDetailView: View {
     var color: MyColor
     @Environment(\.dismiss) var dismiss
     @State var showingMessage: Bool = false
+    let haptic = UIImpactFeedbackGenerator(style: .medium)
     
     // Body
     var body: some View {
@@ -28,6 +29,7 @@ struct ColorDetailView: View {
                     Button(action: {
                         UIPasteboard.general.string = color.hexCode
                         showingMessage = true
+                        haptic.impactOccurred()
                     }) {
                         Image(systemName: "square.on.square")
                     }
@@ -38,12 +40,12 @@ struct ColorDetailView: View {
                         )
                     }
                     
-                    // Favorite button
-                    Button(action: {
-//                            color.isFavorite.toggle()
-                    }) {
-                        color.isFavorite ? Image(systemName: "heart.fill") : Image(systemName: "heart")
-                    }
+//                    // Favorite button
+//                    Button(action: {
+////                            color.isFavorite.toggle()
+//                    }) {
+//                        color.isFavorite ? Image(systemName: "heart.fill") : Image(systemName: "heart")
+//                    }
                     
                     // Close button
                     Button(action: {

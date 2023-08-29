@@ -15,6 +15,7 @@ struct FullscreenTapView: View {
         colorsData.colors[colorIndex]
     }
     @State var showingDetailView: Bool = false
+    let haptic = UIImpactFeedbackGenerator(style: .medium)
     
     var body: some View {
         ZStack {
@@ -53,6 +54,7 @@ struct FullscreenTapView: View {
             } else {
                 colorIndex = 0
             }
+            haptic.impactOccurred()
         }
         .onAppear {
             

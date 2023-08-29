@@ -12,6 +12,7 @@ struct AllColorsListView: View {
     @State var showingDetailView: Bool = false
     @ObservedObject var colorsData = ColorData()
     @State var selectedColor: MyColor? = getSampleColor()
+    let haptic = UIImpactFeedbackGenerator(style: .medium)
         
     // Body
     var body: some View {
@@ -29,6 +30,7 @@ struct AllColorsListView: View {
                                 selectedColor = color
                                 showingDetailView.toggle()
                                 print("\(color.name_jp) is tapped.")
+                                haptic.impactOccurred()
                             }
                             .fullScreenCover(isPresented: $showingDetailView) {
                                 ColorDetailView(color: selectedColor!)

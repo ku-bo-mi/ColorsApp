@@ -64,6 +64,7 @@
 				5B66C1412A95C19D006EEF62 /* ColorRowView.swift */,
 				5B66C1472A95D346006EEF62 /* ColorCardView.swift */,
 				5BB35A882A9DCB30008C82AB /* SettingRowView.swift */,
+				5B66C1432A95C61C006EEF62 /* ColorDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,7 +115,6 @@
 				5B9F8E162A95B2C20021AD13 /* AllColorsListView.swift */,
 				5B66C1532A970EA8006EEF62 /* FavoritesView.swift */,
 				5B66C1552A9713AC006EEF62 /* SettingsView.swift */,
-				5B66C1432A95C61C006EEF62 /* ColorDetailView.swift */,
 				5B9F8E182A95B2C30021AD13 /* Assets.xcassets */,
 				5B9F8E1A2A95B2C30021AD13 /* Preview Content */,
 			);
