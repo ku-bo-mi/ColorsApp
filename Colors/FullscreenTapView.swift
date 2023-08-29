@@ -96,7 +96,7 @@ struct FullscreenTapView: View {
             haptic.impactOccurred()
         }
         .onAppear {
-            
+            colorsData.colors.shuffle()
         }
     }
 }

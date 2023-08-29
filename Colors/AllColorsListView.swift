@@ -65,6 +65,10 @@ struct AllColorsListView: View {
                 }
             } // Toolbar
         } // Navigation
+        .onAppear {
+            colorsData.colors.sort()
+            colorsData.colors.reverse()
+        }
         
     }
 }

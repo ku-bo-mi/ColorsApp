@@ -66,8 +66,15 @@ extension MyColor: Equatable {
 
 extension MyColor: Comparable {
     static func < (lhs: MyColor, rhs: MyColor) -> Bool {
-        return lhs.hexCode < rhs.hexCode
+        let uiColor1 = UIColor(lhs.color)
+        let uiColor2 = UIColor(rhs.color)
+        var hue1: CGFloat = 0
+        var hue2: CGFloat = 0
+        var saturation: CGFloat = 0
+        var brightness: CGFloat = 0
+        var alpha: CGFloat = 0
+        uiColor1.getHue(&hue1, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        uiColor2.getHue(&hue2, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        return hue1 < hue2
     }
-    
-    
 }
