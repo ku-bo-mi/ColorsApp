@@ -9,7 +9,18 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("Settings")
+        NavigationView {
+            List {
+                Section {
+                    SettingRowView(name: "開発者", linkLabel: "@kubomi____", linkDest: "https://twitter.com/kubomi____")
+                    SettingRowView(name: "参考", linkLabel: "JIS 物体色の色名", linkDest: "https://kikakurui.com/z8/Z8102-2001-01.html")
+                } header: {
+                    Text("このアプリについて")
+                }
+            } // List
+            .navigationTitle("設定")
+        } // Navigation
+        
     }
 }
 

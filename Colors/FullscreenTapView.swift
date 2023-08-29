@@ -9,17 +9,12 @@ import SwiftUI
 
 struct FullscreenTapView: View {
     // Properties
-    let colors: [MyColor]
+    @ObservedObject var colorsData = ColorData()
     @State var colorIndex: Int = 0
     var color: MyColor {
-        colors[colorIndex]
+        colorsData.colors[colorIndex]
     }
     @State var showingDetailView: Bool = false
-    
-    // Initializer
-    init(colors: [MyColor]) {
-        self.colors = colors.shuffled()
-    }
     
     var body: some View {
         ZStack {
@@ -53,17 +48,20 @@ struct FullscreenTapView: View {
         }
         .edgesIgnoringSafeArea(.top)
         .onTapGesture {
-            if colorIndex < colors.count - 1 {
+            if colorIndex < colorsData.colors.count - 1 {
                 colorIndex += 1
             } else {
                 colorIndex = 0
             }
+        }
+        .onAppear {
+            
         }
     }
 }
 
 struct FullscreenTapView_Previews: PreviewProvider {
     static var previews: some View {
-        FullscreenTapView(colors: getSampleColors())
+        FullscreenTapView()
     }
 }

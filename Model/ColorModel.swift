@@ -8,7 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct MyColor: Identifiable {
+struct MyColor: Identifiable, Codable {
+    
+
     // properties
     var id = UUID()
     var name_jp: String
@@ -45,6 +47,7 @@ struct MyColor: Identifiable {
     
     // functions
     private func isDark() -> Bool {
+        
         let brightness = Double(red + green + blue) / 3 / 256
         if brightness < 0.7 {
             return true
@@ -52,4 +55,19 @@ struct MyColor: Identifiable {
             return false
         }
     }
+}
+
+
+extension MyColor: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.hexCode == rhs.hexCode
+    }
+}
+
+extension MyColor: Comparable {
+    static func < (lhs: MyColor, rhs: MyColor) -> Bool {
+        return lhs.hexCode < rhs.hexCode
+    }
+    
+    
 }
