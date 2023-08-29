@@ -23,6 +23,7 @@
 		5B9F8E1C2A95B2C30021AD13 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9F8E1B2A95B2C30021AD13 /* Preview Assets.xcassets */; };
 		5B9F8E252A95B3220021AD13 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9F8E242A95B3220021AD13 /* ColorModel.swift */; };
 		5B9F8E272A95B3F50021AD13 /* ColorDataSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9F8E262A95B3F50021AD13 /* ColorDataSample.swift */; };
+		5BB35A892A9DCB30008C82AB /* SettingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB35A882A9DCB30008C82AB /* SettingRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		5B9F8E1B2A95B2C30021AD13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B9F8E242A95B3220021AD13 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		5B9F8E262A95B3F50021AD13 /* ColorDataSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDataSample.swift; sourceTree = "<group>"; };
+		5BB35A882A9DCB30008C82AB /* SettingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				5B66C1412A95C19D006EEF62 /* ColorRowView.swift */,
 				5B66C1472A95D346006EEF62 /* ColorCardView.swift */,
+				5BB35A882A9DCB30008C82AB /* SettingRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				5B66C1522A970E77006EEF62 /* TabMenuView.swift in Sources */,
 				5B8D47BB2A97524F00A40C1E /* ColorData.swift in Sources */,
+				5BB35A892A9DCB30008C82AB /* SettingRowView.swift in Sources */,
 				5B66C1422A95C19D006EEF62 /* ColorRowView.swift in Sources */,
 				5B66C1442A95C61C006EEF62 /* ColorDetailView.swift in Sources */,
 				5B66C1482A95D346006EEF62 /* ColorCardView.swift in Sources */,
@@ -363,6 +367,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,6 +397,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
