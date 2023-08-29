@@ -48,6 +48,6 @@ class ColorData: ObservableObject {
             self.colors = readCSV("ColorData.csv")
         }
 //        self.colors.sort()
-        self.colors.shuffle()
+//        self.colors.reverse()
     }
 }
