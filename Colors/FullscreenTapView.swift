@@ -11,6 +11,7 @@ struct FullscreenTapView: View {
     // Properties
     @ObservedObject var colorsData = ColorData()
     @State var colorIndex: Int = 0
+    @State private var showingMessage: Bool = false
     var color: MyColor {
         colorsData.colors[colorIndex]
     }
@@ -21,31 +22,69 @@ struct FullscreenTapView: View {
         ZStack {
             color.color
                 .animation(.easeInOut.speed(0.3), value: colorIndex)
-            VStack (spacing: 8) {
-                Text(color.name_jp)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Text(color.name_kana)
-                    .fontWeight(.bold)
-            }
-            .foregroundColor(color.textColor)
             VStack {
-                HStack {
+                HStack (spacing: 20) {
                     Spacer()
+                    
+                    // Copy button
                     Button(action: {
-                        showingDetailView.toggle()
+                        UIPasteboard.general.string = color.hexCode
+                        showingMessage = true
+                        haptic.impactOccurred()
                     }) {
-                        Image(systemName: "info.circle")
+                        Image(systemName: "square.on.square")
+                            .font(.title2)
+                            .foregroundColor(color.textColor)
                     }
-                    .foregroundColor(color.textColor)
-                    .fullScreenCover(isPresented: $showingDetailView) {
-                        ColorDetailView(color: color)
+                    .alert(isPresented: $showingMessage) {
+                        Alert(
+                            title: Text("Color copied!"),
+                            message: Text(color.hexCode)
+                        )
                     }
                 }
+                .padding(.top, 40)
+                
                 Spacer()
+                
+                VStack (spacing: 8) {
+                    Text(color.name_jp)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    Text(color.name_kana)
+                        .fontWeight(.bold)
+                }
+                .foregroundColor(color.textColor)
+                
+                Spacer()
+                
+                HStack {
+                    ColorDetailInfoView(color: color)
+                    Spacer()
+                }
             }
-            .padding(60)
-            
+            .padding(40)
+//            VStack {
+//                HStack {
+//                    Spacer()
+//                    Button(action: {
+//                        showingDetailView.toggle()
+//                    }) {
+//                        Image(systemName: "info.circle")
+//                            .resizable()
+//                            .scaledToFit()
+//                            .frame(width: 20, height: 20)
+//                    }
+//                    .foregroundColor(color.textColor)
+//                    .fullScreenCover(isPresented: $showingDetailView) {
+//                        ColorDetailView(color: color)
+//                    }
+//                }
+//                Spacer()
+//            }
+//            .padding(.vertical, 80)
+//            .padding(.horizontal, 40)
+//            
         }
         .edgesIgnoringSafeArea(.top)
         .onTapGesture {

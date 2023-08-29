@@ -11,7 +11,7 @@ struct ColorDetailView: View {
     // Properties
     var color: MyColor
     @Environment(\.dismiss) var dismiss
-    @State var showingMessage: Bool = false
+    @State private var showingMessage: Bool = false
     let haptic = UIImpactFeedbackGenerator(style: .medium)
     
     // Body
@@ -19,7 +19,7 @@ struct ColorDetailView: View {
         
         ZStack (alignment: .leading) {
             // background color
-            color.color.ignoresSafeArea()
+            color.color.edgesIgnoringSafeArea(.top)
                 
             VStack (alignment: .leading, spacing: 8)  {
                 HStack (spacing: 20) {
@@ -51,7 +51,7 @@ struct ColorDetailView: View {
                     Button(action: {
                         dismiss()
                     }) {
-                        Image(systemName: "delete.backward")
+                        Image(systemName: "xmark")
                     }
                 }
                 .foregroundColor(color.textColor)
@@ -70,16 +70,7 @@ struct ColorDetailView: View {
                 
                 Spacer()
                 
-                HStack {
-                    Text("RGB")
-                        .foregroundColor(color.subTextColor)
-                    Text("\(String(color.red)), \(String(color.green)), \(String(color.blue))")
-                }
-                HStack {
-                    Text("HEX")
-                        .foregroundColor(color.subTextColor)
-                    Text(color.hexCode)
-                }
+                ColorDetailInfoView(color: color)
             }
             .foregroundColor(color.textColor)
             .padding(.horizontal, 40)
@@ -90,7 +81,7 @@ struct ColorDetailView: View {
         .navigationTitle(color.name_jp)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(false)
         .onAppear {
             print("color detail view with \(color.name_jp)")
             

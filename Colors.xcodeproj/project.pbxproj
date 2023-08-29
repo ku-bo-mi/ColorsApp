@@ -24,6 +24,8 @@
 		5B9F8E252A95B3220021AD13 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9F8E242A95B3220021AD13 /* ColorModel.swift */; };
 		5B9F8E272A95B3F50021AD13 /* ColorDataSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9F8E262A95B3F50021AD13 /* ColorDataSample.swift */; };
 		5BB35A892A9DCB30008C82AB /* SettingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB35A882A9DCB30008C82AB /* SettingRowView.swift */; };
+		5BB35A8B2A9DD4FA008C82AB /* GridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB35A8A2A9DD4FA008C82AB /* GridItemView.swift */; };
+		5BB35A8D2A9DDB9E008C82AB /* ColorDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB35A8C2A9DDB9E008C82AB /* ColorDetailInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		5B9F8E242A95B3220021AD13 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		5B9F8E262A95B3F50021AD13 /* ColorDataSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDataSample.swift; sourceTree = "<group>"; };
 		5BB35A882A9DCB30008C82AB /* SettingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRowView.swift; sourceTree = "<group>"; };
+		5BB35A8A2A9DD4FA008C82AB /* GridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItemView.swift; sourceTree = "<group>"; };
+		5BB35A8C2A9DDB9E008C82AB /* ColorDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				5B66C1472A95D346006EEF62 /* ColorCardView.swift */,
 				5BB35A882A9DCB30008C82AB /* SettingRowView.swift */,
 				5B66C1432A95C61C006EEF62 /* ColorDetailView.swift */,
+				5BB35A8A2A9DD4FA008C82AB /* GridItemView.swift */,
+				5BB35A8C2A9DDB9E008C82AB /* ColorDetailInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +227,7 @@
 				5B8D47BB2A97524F00A40C1E /* ColorData.swift in Sources */,
 				5BB35A892A9DCB30008C82AB /* SettingRowView.swift in Sources */,
 				5B66C1422A95C19D006EEF62 /* ColorRowView.swift in Sources */,
+				5BB35A8B2A9DD4FA008C82AB /* GridItemView.swift in Sources */,
 				5B66C1442A95C61C006EEF62 /* ColorDetailView.swift in Sources */,
 				5B66C1482A95D346006EEF62 /* ColorCardView.swift in Sources */,
 				5B9F8E172A95B2C20021AD13 /* AllColorsListView.swift in Sources */,
@@ -229,6 +236,7 @@
 				5B66C1582A97148E006EEF62 /* FullscreenTapView.swift in Sources */,
 				5B9F8E272A95B3F50021AD13 /* ColorDataSample.swift in Sources */,
 				5B9F8E152A95B2C20021AD13 /* ColorsApp.swift in Sources */,
+				5BB35A8D2A9DDB9E008C82AB /* ColorDetailInfoView.swift in Sources */,
 				5B9F8E252A95B3220021AD13 /* ColorModel.swift in Sources */,
 				5B66C1562A9713AC006EEF62 /* SettingsView.swift in Sources */,
 			);
