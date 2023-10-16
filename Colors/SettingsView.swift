@@ -12,13 +12,13 @@ struct SettingsView: View {
         NavigationView {
             List {
                 Section {
-                    SettingRowView(name: "開発者", linkLabel: "@kubomi____", linkDest: "https://twitter.com/kubomi____")
-                    SettingRowView(name: "参考", linkLabel: "JIS 物体色の色名", linkDest: "https://kikakurui.com/z8/Z8102-2001-01.html")
+                    SettingRowView(name: "Developer", linkLabel: "@kubomi____", linkDest: "https://twitter.com/kubomi____")
+                    SettingRowView(name: "Reference", linkLabel: "JIS 物体色の色名", linkDest: "https://kikakurui.com/z8/Z8102-2001-01.html")
                 } header: {
-                    Text("このアプリについて")
+                    Text("About this app")
                 }
             } // List
-            .navigationTitle("設定")
+            .navigationTitle("About this App")
         } // Navigation
         
     }

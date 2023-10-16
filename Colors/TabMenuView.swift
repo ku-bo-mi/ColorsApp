@@ -16,13 +16,13 @@ struct TabMenuView: View {
         TabView(selection: $selection) {
             FullscreenTapView()
                 .tabItem {
-                    Label("見つける", systemImage: "hand.tap")
+                    Label("Explore", systemImage: "hand.tap")
                 }
                 .tag(1)
             
             AllColorsListView()
                 .tabItem {
-                    Label("色図鑑", systemImage: "line.3.horizontal")
+                    Label("Palette", systemImage: "line.3.horizontal")
                 }
                 .tag(2)
             
@@ -34,7 +34,7 @@ struct TabMenuView: View {
             
             SettingsView()
                 .tabItem {
-                    Label("設定", systemImage: "ellipsis")
+                    Label("About", systemImage: "ellipsis")
                 }
                 .tag(4)
         } // TabView

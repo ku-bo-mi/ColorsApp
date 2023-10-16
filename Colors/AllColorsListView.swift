@@ -54,7 +54,7 @@ struct AllColorsListView: View {
                     .padding(.horizontal)
                 }
             }
-            .navigationTitle("色図鑑")
+            .navigationTitle("Color Palette")
             .toolbar {
                 // Sort button
                 ToolbarItem(placement: .navigationBarTrailing) {
