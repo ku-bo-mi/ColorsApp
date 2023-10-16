@@ -34,19 +34,19 @@ class ColorData: ObservableObject {
     }
     
     init() {
-        
-        guard let data = UserDefaults.standard.object(forKey: "colors") as? Data else {
-            self.colors = readCSV("ColorData.csv")
-            return
-        }
-        
- 
-        do {
-            let decoder = JSONDecoder()
-            self.colors = try decoder.decode([MyColor].self, from: data)
-        } catch {
-            self.colors = readCSV("ColorData.csv")
-        }
+        self.colors = readCSV("ColorDataEng.csv")
+//        guard let data = UserDefaults.standard.object(forKey: "colors") as? Data else {
+//            self.colors = readCSV("ColorDataEng.csv")
+//            return
+//        }
+//        
+// 
+//        do {
+//            let decoder = JSONDecoder()
+//            self.colors = try decoder.decode([MyColor].self, from: data)
+//        } catch {
+//            self.colors = readCSV("ColorDataEng.csv")
+//        }
 //        self.colors.sort()
 //        self.colors.reverse()
     }

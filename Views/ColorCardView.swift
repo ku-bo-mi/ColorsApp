@@ -17,8 +17,10 @@ struct ColorCardView: View {
                 Text(color.name_jp)
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                Text(color.name_kana)
-                    .fontWeight(.bold)
+//                Text(color.name_kana)
+//                    .fontWeight(.bold)
+                Text(color.name_en.uppercased())
+                    .fontWeight(.medium)
             }
             .foregroundColor(color.textColor)
         }

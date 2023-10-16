@@ -65,6 +65,8 @@ struct ColorDetailView: View {
                         .fontWeight(.bold)
                     Text(color.name_kana)
                         .fontWeight(.bold)
+                    Text(color.name_en.capitalized)
+                        .fontWeight(.medium)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 

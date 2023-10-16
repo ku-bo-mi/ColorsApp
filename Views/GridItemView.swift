@@ -17,9 +17,12 @@ struct GridItemView: View {
             VStack (alignment: .center, spacing: 4) {
                 Text(color.name_jp)
                     .fontWeight(.bold)
-                Text(color.name_kana)
+//                Text(color.name_kana)
+//                    .font(.caption)
+//                    .fontWeight(.bold)
+                Text(color.name_en.capitalized)
                     .font(.caption)
-                    .fontWeight(.bold)
+                    .fontWeight(.medium)
             }
             .foregroundColor(color.textColor)
             .padding(.vertical, 40)

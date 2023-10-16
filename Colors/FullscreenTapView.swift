@@ -53,6 +53,8 @@ struct FullscreenTapView: View {
                         .fontWeight(.bold)
                     Text(color.name_kana)
                         .fontWeight(.bold)
+                    Text(color.name_en.capitalized)
+                        .fontWeight(.medium)
                 }
                 .foregroundColor(color.textColor)
                 

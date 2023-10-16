@@ -11,10 +11,10 @@ import SwiftUI
 struct ColorsApp: App {
     // Properties
     
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+//    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-//    let colorsData: [MyColor] = readCSV("ColorData.csv")
-    var favorites: [MyColor] = []
+    let colorsData: [MyColor] = readCSV("ColorDataEng.csv")
+//    var favorites: [MyColor] = []
     
     // Body
     var body: some Scene {

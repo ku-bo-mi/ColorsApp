@@ -15,6 +15,7 @@ struct MyColor: Identifiable, Codable {
     var id = UUID()
     var name_jp: String
     var name_kana: String
+    var name_en: String
     var red: Int
     var green: Int
     var blue: Int
@@ -37,9 +38,10 @@ struct MyColor: Identifiable, Codable {
     }
     
     // initializer
-    init(name_jp: String, name_kana: String, red: Int, green: Int, blue: Int) {
+    init(name_jp: String, name_kana: String, name_en: String, red: Int, green: Int, blue: Int) {
         self.name_jp = name_jp
         self.name_kana = name_kana
+        self.name_en = name_en
         self.red = red
         self.green = green
         self.blue = blue

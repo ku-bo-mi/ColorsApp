@@ -12,8 +12,9 @@ import SwiftUI
 func readCSV(_ filename: String) -> [MyColor] {
     
     let lines : [String] = readLinesFromCSV(filename)
-//    print(lines)
+    print("read \(lines.count) lines from \(filename)")
     let results : [MyColor] = parseColorData(from: lines)
+    print("read \(results.count) colors from \(filename)")
     return results
 //    if let filepath = Bundle.main.path(forResource: filename, ofType: nil) {
 //                do {
@@ -41,29 +42,33 @@ func readCSV(_ filename: String) -> [MyColor] {
 func parseColorData(from lines: [String]) -> [MyColor] {
     var results: [MyColor] = []
     for line in lines {
-        let data = line.components(separatedBy: ",")
-        if data.count != 7 {
+//        print("parsing: \(line)")
+        // trim whitespace and newlines and then split by ','
+        let data = line.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: ",")
+        if data.count != 8 {
+            print("error: \(line)")
             continue
-            
         }
         let name_jp = data[1]
         let name_kana = data[2]
-        guard let red = Int(data[4]) else {
+        let name_en = data[3]
+        guard let red = Int(data[5]) else {
+            print("error in reading red: \(line)")
             continue
         }
-        guard let green = Int(data[5]) else {
+        guard let green = Int(data[6]) else {
+            print("error in reading green: \(line)")
             continue
         }
-        guard let blue = Int(data[6]) else {
+        guard let blue = Int(data[7]) else {
+            print("error in reading blue: \(line)")
             continue
         }
         
-        
-        
-        results.append(MyColor(name_jp: name_jp, name_kana: name_kana, red: red, green: green, blue: blue))
+        results.append(MyColor(name_jp: name_jp, name_kana: name_kana, name_en: name_en, red: red, green: green, blue: blue))
     
     }
-    print(results.count)
+//    print(results.count)
     return results
 }
 
