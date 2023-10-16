@@ -10,7 +10,6 @@ import SwiftUI
 struct TabMenuView: View {
     // Properties
     @State var selection = 1
-//    let colors: [MyColor]
     
     var body: some View {
         TabView(selection: $selection) {

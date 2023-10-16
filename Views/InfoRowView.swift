@@ -16,9 +16,6 @@ struct InfoRowView: View {
     
     var body: some View {
         VStack {
-//            Divider()
-//                .padding(.vertical, 4)
-            
             HStack {
                 Text(name)
                     .foregroundColor(.secondary)

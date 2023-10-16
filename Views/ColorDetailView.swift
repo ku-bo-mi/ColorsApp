@@ -39,14 +39,7 @@ struct ColorDetailView: View {
                             message: Text(color.hexCode)
                         )
                     }
-                    
-//                    // Favorite button
-//                    Button(action: {
-////                            color.isFavorite.toggle()
-//                    }) {
-//                        color.isFavorite ? Image(systemName: "heart.fill") : Image(systemName: "heart")
-//                    }
-                    
+
                     // Close button
                     Button(action: {
                         dismiss()

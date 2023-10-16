@@ -29,17 +29,6 @@ struct PaletteView: View {
                                 destination: ColorDetailView(color: color)) {
                                     ColorListRowView(color: color)
                                 }
-//                            ColorRowView(color: color)
-//                                .onTapGesture {
-//                                    selectedColor = color
-//                                    showingDetailView.toggle()
-//                                    print("\(color.name_jp) is tapped.")
-//                                    haptic.impactOccurred()
-//                                }
-//                                .fullScreenCover(isPresented: $showingDetailView) {
-//                                    ColorDetailView(color: selectedColor!)
-//                                }
-                                
                         }
                     }
                 } else {

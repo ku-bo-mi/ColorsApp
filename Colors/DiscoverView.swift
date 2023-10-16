@@ -66,27 +66,6 @@ struct DiscoverView: View {
                 }
             }
             .padding(40)
-//            VStack {
-//                HStack {
-//                    Spacer()
-//                    Button(action: {
-//                        showingDetailView.toggle()
-//                    }) {
-//                        Image(systemName: "info.circle")
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width: 20, height: 20)
-//                    }
-//                    .foregroundColor(color.textColor)
-//                    .fullScreenCover(isPresented: $showingDetailView) {
-//                        ColorDetailView(color: color)
-//                    }
-//                }
-//                Spacer()
-//            }
-//            .padding(.vertical, 80)
-//            .padding(.horizontal, 40)
-//            
         }
         .edgesIgnoringSafeArea(.top)
         .onTapGesture {

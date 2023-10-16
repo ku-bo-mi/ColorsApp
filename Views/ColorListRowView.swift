@@ -16,9 +16,6 @@ struct ColorListRowView: View {
             VStack (alignment: .leading, spacing: 4) {
                 Text(color.name_jp)
                     .fontWeight(.bold)
-//                Text(color.name_kana)
-//                    .font(.caption)
-//                    .fontWeight(.bold)
                 Text(color.name_en.capitalized)
                     .font(.caption)
                     .fontWeight(.medium)
