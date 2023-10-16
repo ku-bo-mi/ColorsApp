@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AllColorsListView: View {
+struct PaletteView: View {
     // Properties
     @State private var showingDetailView: Bool = false
     @ObservedObject var colorsData = ColorData()
@@ -27,7 +27,7 @@ struct AllColorsListView: View {
 
                             NavigationLink(
                                 destination: ColorDetailView(color: color)) {
-                                    ColorRowView(color: color)
+                                    ColorListRowView(color: color)
                                 }
 //                            ColorRowView(color: color)
 //                                .onTapGesture {
@@ -47,7 +47,7 @@ struct AllColorsListView: View {
                         ForEach(colorsData.colors) { color in
                             NavigationLink(
                                 destination: ColorDetailView(color: color)) {
-                                    GridItemView(color: color)
+                                    ColorGridItemView(color: color)
                                 }
                         }
                     } // Grid
@@ -93,6 +93,6 @@ struct AllColorsListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        AllColorsListView()
+        PaletteView()
     }
 }

@@ -14,27 +14,21 @@ struct TabMenuView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            FullscreenTapView()
+            DiscoverView()
                 .tabItem {
-                    Label("Explore", systemImage: "hand.tap")
+                    Label("Discover", systemImage: "hand.tap")
                 }
                 .tag(1)
             
-            AllColorsListView()
+            PaletteView()
                 .tabItem {
                     Label("Palette", systemImage: "line.3.horizontal")
                 }
                 .tag(2)
             
-//            FavoritesView(colors: colors)
-//                .tabItem {
-//                    Label("お気に入り", systemImage: "heart")
-//                }
-//                .tag(3)
-            
-            SettingsView()
+            InfoView()
                 .tabItem {
-                    Label("About", systemImage: "ellipsis")
+                    Label("About", systemImage: "info.circle")
                 }
                 .tag(4)
         } // TabView

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingRowView: View {
+struct InfoRowView: View {
     // Properties
     var name: String
     var content: String? = nil
@@ -40,10 +40,10 @@ struct SettingRowView: View {
 struct SettingRowView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            SettingRowView(name: "Developer", content: "Asami")
+            InfoRowView(name: "Developer", content: "Asami")
                 .previewLayout(.fixed(width: 375, height: 60))
             .padding()
-            SettingRowView(name: "Link", linkLabel: "Website", linkDest: "test.com")
+            InfoRowView(name: "Link", linkLabel: "Website", linkDest: "test.com")
                 .previewLayout(.fixed(width: 375, height: 60))
             .padding()
         }

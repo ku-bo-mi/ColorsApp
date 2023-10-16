@@ -24,6 +24,7 @@ struct ColorDetailInfoView: View {
             }
         }
         .foregroundColor(color.textColor)
+        .fontWeight(.medium)
         
     }
 }

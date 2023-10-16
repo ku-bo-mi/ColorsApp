@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct InfoView: View {
     var body: some View {
         NavigationView {
             List {
@@ -17,8 +17,8 @@ struct SettingsView: View {
                     Text("About this app")
                 }
                 Section {
-                    SettingRowView(name: "Developer", linkLabel: "@kubomi____", linkDest: "https://twitter.com/kubomi____")
-                    SettingRowView(name: "Resource", linkLabel: "JIS", linkDest: "https://kikakurui.com/z8/Z8102-2001-01.html")
+                    InfoRowView(name: "Developer", linkLabel: "@kubomi____", linkDest: "https://twitter.com/kubomi____")
+                    InfoRowView(name: "Resource", linkLabel: "JIS", linkDest: "https://kikakurui.com/z8/Z8102-2001-01.html")
                 } header: {
                     Text("Credit")
                 }
@@ -31,6 +31,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        InfoView()
     }
 }

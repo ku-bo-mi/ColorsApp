@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FullscreenTapView: View {
+struct DiscoverView: View {
     // Properties
     @ObservedObject var colorsData = ColorData()
     @State var colorIndex: Int = 0
@@ -105,6 +105,6 @@ struct FullscreenTapView: View {
 
 struct FullscreenTapView_Previews: PreviewProvider {
     static var previews: some View {
-        FullscreenTapView()
+        DiscoverView()
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GridItemView: View {
+struct ColorGridItemView: View {
     // Properties
     let color: MyColor
     var body: some View {
@@ -32,7 +32,7 @@ struct GridItemView: View {
 
 struct GridItemView_Previews: PreviewProvider {
     static var previews: some View {
-        GridItemView(color: getSampleColor())
+        ColorGridItemView(color: getSampleColor())
             .previewLayout(.sizeThatFits)
             .padding()
     }

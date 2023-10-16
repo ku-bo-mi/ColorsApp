@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ColorRowView: View {
+struct ColorListRowView: View {
     //Properties
     @State var color: MyColor
     
@@ -25,19 +25,6 @@ struct ColorRowView: View {
             }
             
             Spacer()
-//            if color.isFavorite {
-//                Button(action: {
-//                    color.isFavorite = false
-//                }) {
-//                    Image(systemName: "heart.fill")
-//                }
-//            } else {
-//                Button(action: {
-//                    color.isFavorite = true
-//                }) {
-//                    Image(systemName: "heart")
-//                }
-//            }
             
         }
         .foregroundColor(color.textColor)
@@ -51,7 +38,7 @@ struct ColorRowView: View {
 
 struct ColorRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorRowView(color: getSampleColor())
+        ColorListRowView(color: getSampleColor())
             .previewLayout(.sizeThatFits)
             .padding()
     }
