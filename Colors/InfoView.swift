@@ -12,7 +12,7 @@ struct InfoView: View {
         NavigationView {
             List {
                 Section {
-                    Text("ColorDictionary is an app that offers a delightful exploration of traditional Japanese colors. Explore a world of colors with our minimalistic interface and let your creativity flow.\nStay inspired. Stay colorful.")
+                    Text("ZenPalette is an app that offers a delightful exploration of traditional Japanese colors. Explore a world of colors with our minimalistic interface and let your creativity flow.\nStay inspired. Stay colorful.")
                 } header: {
                     Text("About this app")
                 }
