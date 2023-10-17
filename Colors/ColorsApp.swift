@@ -11,7 +11,6 @@ import SwiftUI
 struct ColorsApp: App {
     // Properties
     
-//    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     let colorsData: [MyColor] = readCSV("ColorDataEng.csv")
     
     // Body
