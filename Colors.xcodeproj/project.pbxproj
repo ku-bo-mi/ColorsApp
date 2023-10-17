@@ -10,7 +10,6 @@
 		5B66C1422A95C19D006EEF62 /* ColorListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66C1412A95C19D006EEF62 /* ColorListRowView.swift */; };
 		5B66C1442A95C61C006EEF62 /* ColorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66C1432A95C61C006EEF62 /* ColorDetailView.swift */; };
 		5B66C1482A95D346006EEF62 /* ColorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66C1472A95D346006EEF62 /* ColorCardView.swift */; };
-		5B66C14B2A95F021006EEF62 /* ColorData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5B66C14A2A95F021006EEF62 /* ColorData.csv */; };
 		5B66C14D2A95F22F006EEF62 /* CSVReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66C14C2A95F22F006EEF62 /* CSVReader.swift */; };
 		5B66C1522A970E77006EEF62 /* TabMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66C1512A970E77006EEF62 /* TabMenuView.swift */; };
 		5B66C1562A9713AC006EEF62 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B66C1552A9713AC006EEF62 /* InfoView.swift */; };
@@ -32,7 +31,6 @@
 		5B66C1412A95C19D006EEF62 /* ColorListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListRowView.swift; sourceTree = "<group>"; };
 		5B66C1432A95C61C006EEF62 /* ColorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailView.swift; sourceTree = "<group>"; };
 		5B66C1472A95D346006EEF62 /* ColorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCardView.swift; sourceTree = "<group>"; };
-		5B66C14A2A95F021006EEF62 /* ColorData.csv */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ColorData.csv; sourceTree = "<group>"; };
 		5B66C14C2A95F22F006EEF62 /* CSVReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVReader.swift; sourceTree = "<group>"; };
 		5B66C1512A970E77006EEF62 /* TabMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenuView.swift; sourceTree = "<group>"; };
 		5B66C1552A9713AC006EEF62 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
@@ -79,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				5B73BA662ADD213500695D1B /* ColorDataEng.csv */,
-				5B66C14A2A95F021006EEF62 /* ColorData.csv */,
 				5B66C14C2A95F22F006EEF62 /* CSVReader.swift */,
 			);
 			path = ReadCSV;
@@ -210,7 +207,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B66C14B2A95F021006EEF62 /* ColorData.csv in Resources */,
 				5B73BA672ADD213500695D1B /* ColorDataEng.csv in Resources */,
 				5B9F8E1C2A95B2C30021AD13 /* Preview Assets.xcassets in Resources */,
 				5B9F8E192A95B2C30021AD13 /* Assets.xcassets in Resources */,
