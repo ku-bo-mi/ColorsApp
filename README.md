@@ -21,5 +21,5 @@
 Visit [Website](https://kubomi.notion.site/ZenPalette-fabb825632394697b3e5469e7b176dc1?pvs=4) for more information about ZenPalette.
 
 ## Download from AppStore
-You can download ZenPalette on the [App Store](https://example.com/zenpalette-appstore-link](https://apps.apple.com/jp/app/id1622940054)https://apps.apple.com/jp/app/id1622940054).
+You can download ZenPalette on the [App Store](https://apps.apple.com/jp/app/zenpalette-%E6%97%A5%E6%9C%AC%E3%81%AE%E4%BC%9D%E7%B5%B1%E8%89%B2/id6469506135).
 
